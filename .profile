@@ -14,10 +14,24 @@ function parse_git_dirty {
   git diff --quiet || echo " 𐄂"
 }
 
+function limit_string {
+  local str=$1
+  local limit=$2
+  local trunc_symbol=$3
+  if [ "${#str}" -gt "$limit" ]
+  then
+      local cut_str=$(echo "$str" | cut -c"1-$limit")
+      echo "$cut_str""$trunc_symbol"
+   else
+       echo $str
+   fi
+}
+
 function parse_git {
   local branch=$(parse_git_branch)
   if [[ -n "$branch" ]]; then
-    echo " ($branch$(parse_git_dirty))"
+    local short_branch=$(limit_string $branch 30 "…")
+    echo " ($short_branch$(parse_git_dirty))"
   fi
 }
 
