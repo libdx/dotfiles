@@ -81,6 +81,9 @@ alias gsu="git submodule update"
 ## JavaScript
 alias y="yarn"
 
+## Local profile
+source ~/.profile.local
+
 # Completions
 source ~/git-completion.bash
 
