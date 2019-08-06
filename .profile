@@ -27,9 +27,6 @@ export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Hom
 # The f#ck
 eval $(thefuck --alias fix)
 
-# Slack
-export SLACK_CLI_TOKEN="xoxp-59283479254-222429044481-615273905815-2ca3a06b55fa50028bd97d445cf360ee"
-
 # JIRA
 eval "$(jira --completion-script-bash)"
 
