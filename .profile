@@ -1,6 +1,7 @@
 # PATH
 export PATH=$PATH:/Applications/MacVim.app/Contents/bin
 export PATH=$PATH:/Users/oleksandr_ignatenko/flutter/bin
+export PATH=$PATH:/usr/local/bin/
 export PATH=$PATH:/usr/local/sbin/
 export PATH=$PATH:/Users/oleksandr_ignatenko/google-cloud-sdk/bin
 export PATH=$(pyenv root)/shims:/usr/local/bin:/usr/bin:/bin:$PATH
@@ -26,8 +27,11 @@ export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Hom
 # The f#ck
 eval $(thefuck --alias fix)
 
-# Z - jump around (smart cd)
-. /usr/local/etc/profile.d/z.sh
+# Slack
+export SLACK_CLI_TOKEN="xoxp-59283479254-222429044481-615273905815-2ca3a06b55fa50028bd97d445cf360ee"
+
+# JIRA
+eval "$(jira --completion-script-bash)"
 
 # Prompt String
 function parse_git_branch {
@@ -116,7 +120,11 @@ function note {
     local FILE_PATH=$1
     local DIR_PATH=$(dirname $FILE_PATH)
     
-    cd $NOTES_REPO
+    local RETURN_BACK=false
+    if [ "$(pwd)" != $NOTES_REPO ]; then
+        cd $NOTES_REPO
+        RETURN_BACK=true
+    fi
     
     if [ ! -d $DIR_PATH ]; then
         mkdir -p $DIR_PATH
@@ -125,7 +133,10 @@ function note {
     git add $FILE_PATH
     git commit -m "Work on $FILE_PATH"
     git push
-    cd -
+
+    if [ "$RETURN_BACK" = true ]; then
+        cd -
+    fi
 }
 
 # Ѧ Ѩ 
@@ -138,19 +149,22 @@ alias ls="ls -G"
 alias ll="ls -l"
 alias la="ls -a"
 alias lla="ls -la"
+alias le="less"
 alias week="date +%V"
 alias grep="grep --color=auto"
+alias gp="grep --color=auto"
 alias less="less -R"
 alias https='http --default-scheme=https'
 alias w0="curl wttr.in/?0"
 alias wn="curl wttr.in/?n"
 alias ww="curl wttr.in"
 alias load=". ~/.profile"
-
-## Epam
-alias pkup="git log -p --author=\"Oleksandr Ignatenko\" --since=$(date +%Y-%m-01T00:00:00+00:00) --all"
+alias t="trans"
+alias o="open"
+alias png="ping 8.8.8.8"
 
 ## Git
+alias g="git"
 alias co="git checkout"
 alias st="git status"
 alias s="git status"
@@ -166,19 +180,41 @@ alias ciffw="git diff --cached --color-words"
 alias subup="git submodule update"
 alias sel="git st -s | awk '{ print \$2 }' | fzf -m"
 
-# shrug
+## JavaScript
+alias y="yarn"
+
+## Docker
+alias dk="docker"
+alias dkm="docker-machine"
+alias dkc="docker-compose"
+
+## Cocoapods
+alias pod.i="pod install"
+alias pod.u="pod update"
+
+# Emoji
+
 shrug() {
     echo -n "¯\_(ツ)_/¯" | pbcopy
 }
 
-## JavaScript
-alias y="yarn"
+cherry() {
+    echo -n "🍒" | pbcopy
+}
+
+# Utiles
+
+alias trim="awk '{\$1=\$1; print}'"
+alias tolower="awk '{print tolower(\$0)}'"
 
 ## Local profile
 source ~/.profile.local
 
 # Completions
 source ~/git-completion.bash
+
+# Z - jump around (smart cd)
+. /usr/local/etc/profile.d/z.sh
 
 # chruby
 #source /opt/boxen/homebrew/opt/chruby/share/chruby/chruby.sh
