@@ -159,6 +159,7 @@ alias load=". ~/.profile"
 alias t="trans"
 alias o="open"
 alias png="ping 8.8.8.8"
+alias x="pbcopy"
 
 ## Git
 alias g="git"
