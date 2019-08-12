@@ -160,6 +160,8 @@ alias t="trans"
 alias o="open"
 alias png="ping 8.8.8.8"
 alias x="pbcopy"
+alias vimrc="vim ~/.vimrc"
+alias ver="echo "\$BASH_VERSION""
 
 ## Git
 alias g="git"
@@ -204,6 +206,8 @@ cherry() {
 
 alias trim="awk '{\$1=\$1; print}'"
 alias tolower="awk '{print tolower(\$0)}'"
+alias tocamel="perl -pe 's/(^|_)([a-z])/uc(\$2)/ge'"
+alias tomixed="perl -pe 's/_([a-z])/uc(\$1)/ge'"
 
 ## Local profile
 source ~/.profile.local
