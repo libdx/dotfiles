@@ -1,6 +1,31 @@
 syntax on
-execute pathogen#infect()
+
+" Vundle
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'tpope/vim-fugitive'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'tpope/vim-surround'
+Plugin 'maralla/completor.vim'
+
+call vundle#end()
+
+filetype plugin indent on
+"
+
+"execute pathogen#infect()
+set nobackup
 set nocompatible    " use vim defaults
+set backspace=indent,eol,start
 set ls=2            " allways show status line
 set tabstop=4       " numbers of spaces of tab character
 set shiftwidth=4    " numbers of spaces to (auto)indent
@@ -34,6 +59,9 @@ set smartindent        " smart indent
 set expandtab      " tabs are converted to spaces, use only when required
 "set sm             " show matching braces, somewhat annoying...
 "set nowrap         " don't wrap lines
+set spell
+set spell spelllang=en_us,pl,ru,uk
+set spellfile=~/.vim/spell/en.utf-8.add
 
 " key map
 :nnoremap Ó :NERDTreeToggle<CR>
@@ -41,6 +69,24 @@ set expandtab      " tabs are converted to spaces, use only when required
 :nnoremap ∑ :tabclose<CR>
 :nnoremap „ :tabprev<CR>
 :nnoremap ‚ :tabnext<CR>
+
+"if has("mac")
+"    :nnoremap <Esc>O :NERDTreeToggle<CR>
+"    :nnoremap <Esc>n :tabnew<CR>
+"    :nnoremap <Esc>w :tabclose<CR>
+"    " :nnoremap <Esc>[ :tabprev<CR>
+"    " :nnoremap <Esc>] :tabnext<CR>
+"else
+"    :nnoremap <M-O> :NERDTreeToggle<CR>
+"    :nnoremap <M-n> :tabnew<CR>
+"    :nnoremap <M-w> :tabclose<CR>
+"    :nnoremap <M-[> :tabprev<CR>
+"    :nnoremap <M-]> :tabnext<CR>
+"endif
+
+" completor
+let g:completor_python_binary = '/usr/local/bin/python'
+
 
 " :nnoremap ó :CtrlP<CR>
 let g:ctrlp_map = 'ó'
@@ -50,14 +96,17 @@ let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-let g:ctrlp_custom_ignore = 'node_modules'
+let g:ctrlp_custom_ignore = 'node_modules\|ios\|android\|env'
 
 au BufRead,BufNewFile *.go set filetype=go
 au BufRead,BufNewFile *.ru set filetype=ruby
 au BufRead,BufNewFile Podfile set filetype=ruby
+au BufRead,BufNewFile Fastfile set filetype=ruby
 
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
-autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype json setlocal ts=2 sts=2 sw=2
+autocmd Filetype scala setlocal ts=4 sts=4 sw=4
 
 let g:javascript_plugin_flow = 1
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js'
@@ -75,14 +124,17 @@ filetype indent on
 set t_Co=256
 "set term=xterm-256color
 "set background=light
+set background=dark
 colorscheme solarized
 "colorscheme default
+"highlight Comment cterm=italic
 
 if has('gui_running')
 	"set guifont=Monaco:h16
-	set guifont=Akkurat-Mono:h16
-	set background=light
-    "set background=dark
+	"set guifont=Akkurat-Mono:h16
+    set guifont=Operator\ Mono\ Book:h16
+	"set background=light
+    set background=dark
 	colorscheme solarized
 endif
 
