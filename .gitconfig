@@ -1,0 +1,51 @@
+[color]
+    status = auto
+    ui = true
+[alias]
+	st = status
+	ci = commit
+    civ = commit -v
+	co = checkout
+	unstage = reset HEAD --
+    undo = reset --soft HEAD~1
+	last = log -1 HEAD
+	restash = !git stash && git stash apply
+    current = rev-parse --abbrev-ref HEAD
+    cur = rev-parse --abbrev-ref HEAD
+    curx = !git current | tr -d '\n' | pbcopy
+    incoming = !git log ..origin/$(git current)
+    please = push --force-with-lease
+    amend = commit -v --amend
+    sub = submodule
+    re = rebase
+    rec = rebase --continue
+    me = merge
+    mec = merge --continue
+    chp = cherry-pick
+    chpc = cherry-pick --continue
+
+    pick = !FILES=`git status -s | awk '{ print $2 }' | fzf -x -m` && git add --all ${FILES}
+    edit = !FILES=`git status -s | awk '{ print $2 }' | fzf -x -m` && vim -O ${FILES}
+    switch = !BRANCH=`git branch | fzf` && git checkout ${BRANCH}
+    search = !HASH=`git log --pretty=oneline | head -n 100 | fzf` && git show `echo ${HASH} | awk '{ print $1 }'`
+    pushup = !git push --set-upstream origin $(git current)
+    subup = submodule update
+    new = !bash -c 'source ~/.profile.local && cap_create_git_branch $0 $@'
+[core]
+	editor = vim
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[user]
+	name = Oleksandr Ignatenko
+	email = avi.cpp@gmail.com
+[color "diff"]
+    old = red
+	new = green
+    meta = yellow
+    frag = magenta bold
+    whitespace = red reverse
+    commit = yellow
+[color "diff-highlight"]
+	oldNormal = red
+    oldHighlight = red 52
+    newNormal = green
+    newHighlight = green 22
