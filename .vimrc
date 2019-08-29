@@ -16,6 +16,8 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tpope/vim-surround'
 Plugin 'maralla/completor.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 
@@ -85,8 +87,15 @@ set spellfile=~/.vim/spell/en.utf-8.add
 "endif
 
 " completor
+let g:completor_auto_trigger = 0
 let g:completor_python_binary = '/usr/local/bin/python'
 
+" airline
+"let g:airline_section_a = '%{mode()} 0x%B'
+let g:airline_section_a = airline#section#create_right(['mode', 'paste', 'iminsert'])
+"let g:airline_section_y = airline#section#create_right(['ffenc', '\u%B'])
+let g:airline_section_error = ''
+let g:airline_section_warning = ''
 
 " :nnoremap ó :CtrlP<CR>
 let g:ctrlp_map = 'ó'
