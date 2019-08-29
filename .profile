@@ -146,11 +146,11 @@ alias ls="ls -G"
 alias ll="ls -l"
 alias la="ls -a"
 alias lla="ls -la"
-alias le="less"
 alias week="date +%V"
 alias grep="grep --color=auto"
 alias gp="grep --color=auto"
 alias less="less -R"
+alias le="less"
 alias https='http --default-scheme=https'
 alias w0="curl wttr.in/?0"
 alias wn="curl wttr.in/?n"
@@ -162,6 +162,7 @@ alias png="ping 8.8.8.8"
 alias x="pbcopy"
 alias vimrc="vim ~/.vimrc"
 alias ver="echo "\$BASH_VERSION""
+alias p="pwd"
 
 ## Git
 alias g="git"
@@ -180,6 +181,11 @@ alias ciffw="git diff --cached --color-words"
 alias subup="git submodule update"
 alias sel="git st -s | awk '{ print \$2 }' | fzf -m"
 
+## GitLab
+alias mrc="lab mr create origin"
+alias mrl="lab mr list"
+alias mro="lab mr browse"
+
 ## JavaScript
 alias y="yarn"
 
@@ -187,6 +193,7 @@ alias y="yarn"
 alias dk="docker"
 alias dkm="docker-machine"
 alias dkc="docker-compose"
+alias dkc.e="docker-compose exec"
 
 ## Cocoapods
 alias pod.i="pod install"
