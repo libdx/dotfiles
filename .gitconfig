@@ -9,6 +9,7 @@
 	unstage = reset HEAD --
     undo = reset --soft HEAD~1
 	last = log -1 HEAD
+    one = log -1
 	restash = !git stash && git stash apply
     current = rev-parse --abbrev-ref HEAD
     cur = rev-parse --abbrev-ref HEAD
