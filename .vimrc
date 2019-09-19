@@ -109,6 +109,7 @@ let g:ctrlp_custom_ignore = 'node_modules\|ios\|android\|env'
 
 au BufRead,BufNewFile *.go set filetype=go
 au BufRead,BufNewFile *.ru set filetype=ruby
+au BufRead,BufNewFile *.py set filetype=python
 au BufRead,BufNewFile Podfile set filetype=ruby
 au BufRead,BufNewFile Fastfile set filetype=ruby
 
@@ -136,7 +137,13 @@ set t_Co=256
 set background=dark
 colorscheme solarized
 "colorscheme default
-"highlight Comment cterm=italic
+
+" Italic
+highlight Comment cterm=italic
+autocmd FileType python highlight Statement cterm=italic
+"" colors in next lines are valid for solarized colorcheme
+autocmd FileType python highlight Operator cterm=none ctermfg=2
+highlight String cterm=italic ctermfg=6 guifg=#ffa0a0
 
 if has('gui_running')
 	"set guifont=Monaco:h16
