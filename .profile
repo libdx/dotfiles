@@ -189,6 +189,9 @@ alias mro="lab mr browse"
 ## JavaScript
 alias y="yarn"
 
+## Python
+alias py="python"
+
 ## Docker
 alias dk="docker"
 alias dkm="docker-machine"
