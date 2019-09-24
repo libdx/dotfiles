@@ -191,6 +191,8 @@ alias y="yarn"
 
 ## Python
 alias py="python"
+alias pe="pipenv"
+alias pe.r="pipenv run"
 
 ## Docker
 alias dk="docker"
@@ -237,3 +239,6 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Haskell
 #eval "$(stack --bash-completion-script stack)"
+
+# This can be used to make text be italic (require terminal and terminfo support)
+# echo `tput sitm`italics`tput ritm`

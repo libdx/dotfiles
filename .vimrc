@@ -15,9 +15,9 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tpope/vim-surround'
-Plugin 'maralla/completor.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()
 
@@ -66,6 +66,9 @@ set spell spelllang=en_us,pl,ru,uk
 set spellfile=~/.vim/spell/en.utf-8.add
 
 " key map
+
+let mapleader = ","
+
 :nnoremap Ó :NERDTreeToggle<CR>
 :nnoremap ń :tabnew<CR>
 :nnoremap ∑ :tabclose<CR>
@@ -86,9 +89,11 @@ set spellfile=~/.vim/spell/en.utf-8.add
 "    :nnoremap <M-]> :tabnext<CR>
 "endif
 
-" completor
-let g:completor_auto_trigger = 0
-let g:completor_python_binary = '/usr/local/bin/python'
+" Python Jedi
+autocmd FileType python setlocal completeopt-=preview
+let g:jedi#popup_on_dot = 0
+let g:jedi#show_call_signatures = 0
+" let g:jedi#completions_enabled = 0
 
 " airline
 "let g:airline_section_a = '%{mode()} 0x%B'
@@ -141,6 +146,7 @@ colorscheme solarized
 " Italic
 highlight Comment cterm=italic
 autocmd FileType python highlight Statement cterm=italic
+highlight PreProc cterm=italic
 "" colors in next lines are valid for solarized colorcheme
 autocmd FileType python highlight Operator cterm=none ctermfg=2
 highlight String cterm=italic ctermfg=6 guifg=#ffa0a0
