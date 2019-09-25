@@ -18,11 +18,12 @@ Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 call vundle#end()
 
 filetype plugin indent on
-"
 
 "execute pathogen#infect()
 set nobackup
@@ -69,25 +70,43 @@ set spellfile=~/.vim/spell/en.utf-8.add
 
 let mapleader = ","
 
-:nnoremap Ó :NERDTreeToggle<CR>
-:nnoremap ń :tabnew<CR>
-:nnoremap ∑ :tabclose<CR>
-:nnoremap „ :tabprev<CR>
-:nnoremap ‚ :tabnext<CR>
+:map <leader>h :noh<CR>
 
-"if has("mac")
-"    :nnoremap <Esc>O :NERDTreeToggle<CR>
-"    :nnoremap <Esc>n :tabnew<CR>
-"    :nnoremap <Esc>w :tabclose<CR>
-"    " :nnoremap <Esc>[ :tabprev<CR>
-"    " :nnoremap <Esc>] :tabnext<CR>
-"else
-"    :nnoremap <M-O> :NERDTreeToggle<CR>
-"    :nnoremap <M-n> :tabnew<CR>
-"    :nnoremap <M-w> :tabclose<CR>
-"    :nnoremap <M-[> :tabprev<CR>
-"    :nnoremap <M-]> :tabnext<CR>
-"endif
+" Comment and uncomment lines
+:map <leader># :s!^!# ! <bar> :noh<CR>
+:map <leader>/ :s!^!// ! <bar> :noh<CR>
+:map <leader>" :s!^!" ! <bar> :noh<CR>
+
+:map ]# :s!^!# ! <bar> :noh<CR>
+:map ]/ :s!^!// ! <bar> :noh<CR>
+
+:map [# :s!^# !! <bar> :noh<CR>
+:map [/ :s!^// !! <bar> :noh<CR>
+
+if has("mac")
+    :nnoremap Ó :NERDTreeToggle<CR>
+    :nnoremap ń :tabnew<CR>
+    :nnoremap ∑ :tabclose<CR>
+    :nnoremap „ :tabprev<CR>
+    :nnoremap ‚ :tabnext<CR>
+
+    " :nnoremap <leader>O :NERDTreeToggle<CR>
+    " :nnoremap <leader>n :tabnew<CR>
+    " :nnoremap <leader>w :tabclose<CR>
+    " :nnoremap <leader>[ :tabprev<CR>
+    " :nnoremap <leader>] :tabnext<CR>
+else
+    :nnoremap <M-O> :NERDTreeToggle<CR>
+    :nnoremap <M-n> :tabnew<CR>
+    :nnoremap <M-w> :tabclose<CR>
+    :nnoremap <M-[> :tabprev<CR>
+    :nnoremap <M-]> :tabnext<CR>
+endif
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-f>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 
 " Python Jedi
 autocmd FileType python setlocal completeopt-=preview
@@ -102,8 +121,8 @@ let g:airline_section_a = airline#section#create_right(['mode', 'paste', 'iminse
 let g:airline_section_error = ''
 let g:airline_section_warning = ''
 
-" :nnoremap ó :CtrlP<CR>
-let g:ctrlp_map = 'ó'
+" let g:ctrlp_map = 'ó'
+:nnoremap <leader>o :CtrlP<CR>
 
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
