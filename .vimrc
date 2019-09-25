@@ -25,7 +25,6 @@ call vundle#end()
 
 filetype plugin indent on
 
-"execute pathogen#infect()
 set nobackup
 set nocompatible    " use vim defaults
 set backspace=indent,eol,start
@@ -82,6 +81,11 @@ let mapleader = ","
 
 :map [# :s!^# !! <bar> :noh<CR>
 :map [/ :s!^// !! <bar> :noh<CR>
+
+" Putting words under quotes
+:nnoremap <leader>q` ciw``<ESC>P
+:nnoremap <Leader>q" ciw""<ESC>P
+:nnoremap <Leader>q' ciw''<ESC>P
 
 if has("mac")
     :nnoremap Ó :NERDTreeToggle<CR>
