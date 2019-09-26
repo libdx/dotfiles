@@ -20,6 +20,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'voithos/vim-python-matchit'
 
 call vundle#end()
 
@@ -70,6 +71,8 @@ set spellfile=~/.vim/spell/en.utf-8.add
 let mapleader = ","
 
 :map <leader>h :noh<CR>
+:nnoremap <leader><CR> i<CR><ESC>
+:nnoremap <leader>w :w<CR>
 
 " Comment and uncomment lines
 :map <leader># :s!^!# ! <bar> :noh<CR>
