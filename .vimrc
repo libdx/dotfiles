@@ -28,7 +28,7 @@ filetype plugin indent on
 
 set nobackup
 set nocompatible    " use vim defaults
-set backspace=indent,eol,start
+set backspace=indent,eol,start " makes backspace work as in most text editors
 set ls=2            " allways show status line
 set tabstop=4       " numbers of spaces of tab character
 set shiftwidth=4    " numbers of spaces to (auto)indent
@@ -41,37 +41,42 @@ set visualbell t_vb=    " turn off error beep/flash
 set novisualbell    " turn off visual bell
 set nobackup        " do not keep a backup file
 set number          " show line numbers
-"set ignorecase      " ignore case when searching 
-"set noignorecase   " don't ignore case
 set title           " show title in console title bar
 set ttyfast         " smoother changes
-"set ttyscroll=0        " turn off scrolling, didn't work well with PuTTY
 set modeline        " last lines in document sets vim mode
 set modelines=3     " number lines checked for modelines
 set shortmess=atI   " Abbreviate messages
 set nostartofline   " don't jump to first character when paging
-"set whichwrap=b,s,h,l,<,>,[,]   " move freely between files
-"set viminfo='20,<50,s10,h
-set autoindent     " always set autoindenting on
-set smartindent        " smart indent
-"set cindent            " cindent
-"set noautoindent
-"set nosmartindent
-"set nocindent
-"set autowrite      " auto saves changes when quitting and swiching buffer
-set expandtab      " tabs are converted to spaces, use only when required
-"set sm             " show matching braces, somewhat annoying...
-"set nowrap         " don't wrap lines
+set autoindent      " always set autoindenting on
+set smartindent     " smart indent
+set expandtab       " tabs are converted to spaces, use only when required
+
 set spell
 set spell spelllang=en_us,pl,ru,uk
 set spellfile=~/.vim/spell/en.utf-8.add
+
+"set ignorecase                 " ignore case when searching 
+"set noignorecase               " don't ignore case
+"set ttyscroll=0                " turn off scrolling, didn't work well with PuTTY
+"set whichwrap=b,s,h,l,<,>,[,]  " move freely between files
+"set viminfo='20,<50,s10,h
+"set cindent
+"set noautoindent
+"set nosmartindent
+"set nocindent
+"set autowrite                  " auto saves changes when quitting and swiching buffer
+"set sm                         " show matching braces, somewhat annoying...
+"set nowrap                     " don't wrap lines
 
 " key map
 
 let mapleader = ","
 
+" no highlight
 :map <leader>h :noh<CR>
+" break string with new line
 :nnoremap <leader><CR> i<CR><ESC>
+" quick write
 :nnoremap <leader>w :w<CR>
 
 " Comment and uncomment lines
@@ -90,18 +95,28 @@ let mapleader = ","
 :nnoremap <Leader>q" ciw""<ESC>P
 :nnoremap <Leader>q' ciw''<ESC>P
 
+" convenient jumps between splits
+:nnoremap <C-h> <C-w>h
+:nnoremap <C-j> <C-w>j
+:nnoremap <C-k> <C-w>k
+:nnoremap <C-l> <C-w>l
+
+" tabs and navigation
+:nnoremap <leader>t :tabnew<CR>
+:nnoremap <leader>Q :tabclose<CR>
+:nnoremap <leader>d :tabclose<CR>
+:nnoremap <leader>[ :tabprev<CR>
+:nnoremap <leader>] :tabnext<CR>
+
 if has("mac")
+    " iTerm2 doesn't pass options as Meta key
+    " following characters corresponds to pressing options + O, n, w, [, ] on
+    " Polish pro keyboard layout
     :nnoremap Ó :NERDTreeToggle<CR>
     :nnoremap ń :tabnew<CR>
     :nnoremap ∑ :tabclose<CR>
     :nnoremap „ :tabprev<CR>
     :nnoremap ‚ :tabnext<CR>
-
-    " :nnoremap <leader>O :NERDTreeToggle<CR>
-    " :nnoremap <leader>n :tabnew<CR>
-    " :nnoremap <leader>w :tabclose<CR>
-    " :nnoremap <leader>[ :tabprev<CR>
-    " :nnoremap <leader>] :tabnext<CR>
 else
     :nnoremap <M-O> :NERDTreeToggle<CR>
     :nnoremap <M-n> :tabnew<CR>
@@ -164,10 +179,8 @@ filetype indent on
 
 set t_Co=256
 "set term=xterm-256color
-"set background=light
 set background=dark
 colorscheme solarized
-"colorscheme default
 
 " Italic
 highlight Comment cterm=italic
@@ -181,7 +194,6 @@ if has('gui_running')
 	"set guifont=Monaco:h16
 	"set guifont=Akkurat-Mono:h16
     set guifont=Operator\ Mono\ Book:h16
-	"set background=light
     set background=dark
 	colorscheme solarized
 endif
