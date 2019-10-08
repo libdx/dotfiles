@@ -22,7 +22,10 @@ export LANG=en_US.UTF-8
 export MDV_THEME=963.4449
 
 # Android
-export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/"
+#export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/"
+
+# Java
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home/"
 
 # The f#ck
 eval $(thefuck --alias fix)

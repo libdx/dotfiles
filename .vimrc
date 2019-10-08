@@ -104,7 +104,6 @@ let mapleader = ","
 " tabs and navigation
 :nnoremap <leader>t :tabnew<CR>
 :nnoremap <leader>Q :tabclose<CR>
-:nnoremap <leader>d :tabclose<CR>
 :nnoremap <leader>[ :tabprev<CR>
 :nnoremap <leader>] :tabnext<CR>
 
