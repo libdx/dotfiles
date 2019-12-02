@@ -26,6 +26,7 @@ call vundle#end()
 
 filetype plugin indent on
 
+set cursorline
 set nobackup
 set nocompatible    " use vim defaults
 set backspace=indent,eol,start " makes backspace work as in most text editors
@@ -160,6 +161,7 @@ au BufRead,BufNewFile Fastfile set filetype=ruby
 
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype typescript setlocal ts=2 sts=2 sw=2
 autocmd Filetype json setlocal ts=2 sts=2 sw=2
 autocmd Filetype scala setlocal ts=4 sts=4 sw=4
 
