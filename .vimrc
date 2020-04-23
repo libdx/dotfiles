@@ -18,15 +18,21 @@ Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'davidhalter/jedi-vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+"Plugin 'SirVer/ultisnips'
+"Plugin 'honza/vim-snippets'
 Plugin 'voithos/vim-python-matchit'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'HerringtonDarkholme/yats.vim'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'vim-syntastic/syntastic'
 
 call vundle#end()
 
 filetype plugin indent on
 
 set cursorline
+set mouse=a " enable mouse support for all modes
 set nobackup
 set nocompatible    " use vim defaults
 set backspace=indent,eol,start " makes backspace work as in most text editors
@@ -56,7 +62,10 @@ set spell
 set spell spelllang=en_us,pl,ru,uk
 set spellfile=~/.vim/spell/en.utf-8.add
 
-"set ignorecase                 " ignore case when searching 
+" `»` for tabs and `°` for trailing whitespaces.
+set list listchars=tab:»\ ,trail:°
+
+"set ignorecase                 " ignore case when searching
 "set noignorecase               " don't ignore case
 "set ttyscroll=0                " turn off scrolling, didn't work well with PuTTY
 "set whichwrap=b,s,h,l,<,>,[,]  " move freely between files
@@ -69,6 +78,9 @@ set spellfile=~/.vim/spell/en.utf-8.add
 "set sm                         " show matching braces, somewhat annoying...
 "set nowrap                     " don't wrap lines
 
+setlocal foldmethod=syntax  " sets fold method based on syntax
+set foldlevel=99            " unfold methods by default when open file
+
 " key map
 
 let mapleader = ","
@@ -78,7 +90,7 @@ let mapleader = ","
 " break string with new line
 :nnoremap <leader><CR> i<CR><ESC>
 " quick write
-:nnoremap <leader>w :w<CR>
+:nnoremap <leader>w :noh<CR>:w<CR>
 
 " Comment and uncomment lines
 :map <leader># :s!^!# ! <bar> :noh<CR>
@@ -108,6 +120,20 @@ let mapleader = ","
 :nnoremap <leader>[ :tabprev<CR>
 :nnoremap <leader>] :tabnext<CR>
 
+" NERDTree
+:nnoremap <leader>n :NERDTreeToggle<CR>
+:nnoremap <leader>N :NERDTreeFind<CR>
+
+" Disable directory arrows
+let g:NERDTreeDirArrowExpandable = '~'
+let g:NERDTreeDirArrowCollapsible = '|'
+let g:NERDTreeWinSize=40
+
+if has("linux")
+  :vnoremap <leader>c "+y
+  :nnoremap <leader>v "+p
+endif
+
 if has("mac")
     " iTerm2 doesn't pass options as Meta key
     " following characters corresponds to pressing options + O, n, w, [, ] on
@@ -130,6 +156,11 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-f>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 
+" YouCompleteMe
+autocmd FileType typescript setlocal completeopt-=preview
+autocmd FileType javascript setlocal completeopt-=preview
+let g:ycm_add_preview_to_completeopt = 0
+
 " Python Jedi
 autocmd FileType python setlocal completeopt-=preview
 let g:jedi#popup_on_dot = 0
@@ -144,7 +175,7 @@ let g:airline_section_error = ''
 let g:airline_section_warning = ''
 
 " let g:ctrlp_map = 'ó'
-:nnoremap <leader>o :CtrlP<CR>
+:nnoremap <leader>o :CtrlP .<CR>
 
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
@@ -158,6 +189,7 @@ au BufRead,BufNewFile *.ru set filetype=ruby
 au BufRead,BufNewFile *.py set filetype=python
 au BufRead,BufNewFile Podfile set filetype=ruby
 au BufRead,BufNewFile Fastfile set filetype=ruby
+au BufRead,BufNewFile .profile.my set filetype=sh
 
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
@@ -187,17 +219,18 @@ colorscheme solarized
 highlight Comment cterm=italic
 autocmd FileType python highlight Statement cterm=italic
 highlight PreProc cterm=italic
-"" colors in next lines are valid for solarized colorcheme
+"" colors in next lines are valid for solarized colorscheme
 autocmd FileType python highlight Operator cterm=none ctermfg=2
 highlight String cterm=italic ctermfg=6 guifg=#ffa0a0
 
 if has('gui_running')
-	"set guifont=Monaco:h16
-	"set guifont=Akkurat-Mono:h16
+    "set guifont=Monaco:h16
+    "set guifont=Akkurat-Mono:h16
     set guifont=Operator\ Mono\ Book:h16
     set background=dark
-	colorscheme solarized
+    colorscheme solarized
 endif
 
 " js
 let g:jsx_ext_required = 0
+
