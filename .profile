@@ -6,10 +6,14 @@ export PATH=$PATH:/usr/local/sbin/
 export PATH=$PATH:/Users/oleksandr_ignatenko/google-cloud-sdk/bin
 export PATH=$(pyenv root)/shims:/usr/local/bin:/usr/bin:/bin:$PATH
 export PATH=$PATH:/Users/oleksandr_ignatenko/Library/Android/sdk/tools
+export PATH=$HOME/.my/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 # Lang
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+force_color_prompt=yes
 
 # Terminal Markdown Viewer (mdv)
 ## Good values:
@@ -25,13 +29,13 @@ export MDV_THEME=963.4449
 #export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/"
 
 # Java
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home/"
+#export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home/"
 
 # The f#ck
-eval $(thefuck --alias fix)
+#eval $(thefuck --alias fix)
 
 # JIRA
-eval "$(jira --completion-script-bash)"
+#eval "$(jira --completion-script-bash)"
 
 # Prompt String
 function parse_git_branch {
@@ -70,7 +74,7 @@ function promt {
   local  OFF="\[\033[m\]"
   #PS1="${BOLD}[\W${LIGHT_RED}$(parse_git)${OFF}${BOLD}]\$${OFF} "
   #PS1="${BOLD}\W${LIGHT_RED}$(parse_git)${OFF}${BOLD} ➜${OFF} "
-  PS1="${BOLD}\W${LIGHT_RED}$(parse_git)${OFF}${BOLD} ->${OFF} "
+  PS1="${BOLD}\W${LIGHT_RED}$(parse_git)${OFF}${BOLD} ~>${OFF} "
   PS2="${BOLD}>>${OFF} "
 }
 
@@ -162,9 +166,13 @@ alias load=". ~/.profile"
 alias t="trans"
 alias o="open"
 alias png="ping 8.8.8.8"
-alias x="pbcopy"
+alias x="xclip -selection clipboard" # use pbcopy on Mac
 alias vimrc="vim ~/.vimrc"
+alias myvimrc="vim $HOME/.vimrc.d/main.vim"
 alias ver="echo "\$BASH_VERSION""
+alias p="pwd"
+alias px="pwd | xclip -selection clipboard" # use pbcopy on Mac
+alias ncal="ncal -M"
 
 ## Git
 alias g="git"
@@ -184,6 +192,10 @@ alias ciff="git diff --cached"
 alias ciffw="git diff --cached --color-words"
 alias subup="git submodule update"
 alias sel="git st -s | awk '{ print \$2 }' | fzf -m"
+
+## Mercurial
+alias gh="hg"
+alias h="hg"
 
 ## GitLab
 alias mrc="lab mr create origin"
@@ -211,11 +223,11 @@ alias pod.u="pod update"
 # Emoji
 
 shrug() {
-    echo -n "¯\_(ツ)_/¯" | pbcopy
+    echo -n "¯\_(ツ)_/¯" | xclip -selection clipboard # use pbcopy on Mac
 }
 
 cherry() {
-    echo -n "🍒" | pbcopy
+    echo -n "🍒" | xclip -selection clipboard # use pbcopy on Mac
 }
 
 # Utiles
@@ -226,13 +238,14 @@ alias tocamel="perl -pe 's/(^|_)([a-z])/uc(\$2)/ge'"
 alias tomixed="perl -pe 's/_([a-z])/uc(\$1)/ge'"
 
 ## Local profile
-source ~/.profile.local
+#source ~/.profile.local
 
 # Completions
-source ~/git-completion.bash
+#source ~/git-completion.bash
 
 # Z - jump around (smart cd)
-. /usr/local/etc/profile.d/z.sh
+#. /usr/local/etc/profile.d/z.sh
+. $HOME/.linuxbrew/etc/profile.d/z.sh
 
 # chruby
 #source /opt/boxen/homebrew/opt/chruby/share/chruby/chruby.sh
@@ -246,3 +259,6 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # This can be used to make text be italic (require terminal and terminfo support)
 # echo `tput sitm`italics`tput ritm`
+
+# Disable Software Flow Control (XON/XOFF flow control)
+stty -ixon
