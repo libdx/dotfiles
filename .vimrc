@@ -211,17 +211,17 @@ filetype plugin on
 filetype indent on
 
 set t_Co=256
-"set term=xterm-256color
+set term=xterm-256color
 set background=dark
 colorscheme solarized
 
 " Italic
-highlight Comment cterm=italic
-autocmd FileType python highlight Statement cterm=italic
-highlight PreProc cterm=italic
-"" colors in next lines are valid for solarized colorscheme
+" highlight Comment cterm=italic
+" autocmd FileType python highlight Statement cterm=italic
+" highlight PreProc cterm=italic
+" colors in next lines are valid for solarized colorscheme
 autocmd FileType python highlight Operator cterm=none ctermfg=2
-highlight String cterm=italic ctermfg=6 guifg=#ffa0a0
+" highlight String cterm=italic ctermfg=6 guifg=#ffa0a0
 
 if has('gui_running')
     "set guifont=Monaco:h16
