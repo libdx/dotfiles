@@ -74,7 +74,7 @@ function promt {
   local  OFF="\[\033[m\]"
   #PS1="${BOLD}[\W${LIGHT_RED}$(parse_git)${OFF}${BOLD}]\$${OFF} "
   #PS1="${BOLD}\W${LIGHT_RED}$(parse_git)${OFF}${BOLD} ➜${OFF} "
-  PS1="${BOLD}\W${LIGHT_RED}$(parse_git)${OFF}${BOLD} ~>${OFF} "
+  PS1="${BOLD}\W${LIGHT_RED}$(parse_git)${OFF}${BOLD} ->${OFF} "
   PS2="${BOLD}>>${OFF} "
 }
 
