@@ -24,6 +24,10 @@ Plugin 'HerringtonDarkholme/yats.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'nvie/vim-flake8'
+Plugin 'jistr/vim-nerdtree-tabs'
 
 call vundle#end()
 

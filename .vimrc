@@ -13,16 +13,17 @@ source ~/.vim/my/ctrlp.vim
 source ~/.vim/my/closetag.vim
 source ~/.vim/my/js-plugin.vim
 source ~/.vim/my/jsx-plugin.vim
+source ~/.vim/my/simple-fold.vim
 
 if has('gui_running')
-    source .vim/my/gui.vim
+    source ~/.vim/my/gui.vim
 endif
 
 if has("linux")
-  source .vim/my/linux.vim
+  source ~/.vim/my/linux.vim
 endif
 
 if has("mac")
-    source .vim/my/mac.vim
+    source ~/.vim/my/mac.vim
 endif
 

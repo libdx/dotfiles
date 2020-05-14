@@ -26,6 +26,7 @@ set nostartofline   " don't jump to first character when paging
 set autoindent      " always set autoindenting on
 set smartindent     " smart indent
 set expandtab       " tabs are converted to spaces, use only when required
+set iskeyword+=-    " treat identifiers with dash as single word (i.e. search-tag)
 
 set spell
 set spell spelllang=en_us,pl,ru,uk
@@ -47,5 +48,6 @@ set list listchars=tab:»\ ,trail:°
 "set sm                         " show matching braces, somewhat annoying...
 "set nowrap                     " don't wrap lines
 
-setlocal foldmethod=syntax  " sets fold method based on syntax
-set foldlevel=99            " unfold methods by default when open file
+"setlocal foldmethod=syntax  " sets fold method based on syntax
+set foldmethod=indent
+set foldlevel=2            " unfold methods by default when open file

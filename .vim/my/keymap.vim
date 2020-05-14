@@ -36,8 +36,8 @@ let mapleader = ","
 :nnoremap <leader>] :tabnext<CR>
 
 " NERDTree
-:nnoremap <leader>n :NERDTreeToggle<CR>
-:nnoremap <leader>N :NERDTreeFind<CR>
+:nnoremap <leader>n :NERDTreeTabsToggle<CR>
+:nnoremap <leader>N :NERDTreeTabsFind<CR>
 
 " CtrlP
 :nnoremap <leader>o :CtrlP .<CR>
