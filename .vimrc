@@ -1,4 +1,4 @@
-source ~/.vim/my/vundle.vim
+source ~/.vim/my/vim-plug.vim
 source ~/.vim/my/common.vim
 source ~/.vim/my/theme.vim
 source ~/.vim/my/keymap.vim
@@ -14,6 +14,10 @@ source ~/.vim/my/closetag.vim
 source ~/.vim/my/js-plugin.vim
 source ~/.vim/my/jsx-plugin.vim
 source ~/.vim/my/simple-fold.vim
+source ~/.vim/my/coc.vim
+
+"tmp vim-sort-imports: sort on write
+"let g:import_sort_auto = 1
 
 if has('gui_running')
     source ~/.vim/my/gui.vim

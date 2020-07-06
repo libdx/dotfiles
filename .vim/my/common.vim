@@ -50,4 +50,4 @@ set list listchars=tab:»\ ,trail:°
 
 "setlocal foldmethod=syntax  " sets fold method based on syntax
 set foldmethod=indent
-set foldlevel=2            " unfold methods by default when open file
+set foldlevel=99           " unfold methods by default when open file

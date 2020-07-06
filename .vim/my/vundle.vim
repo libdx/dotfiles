@@ -16,8 +16,9 @@ Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'davidhalter/jedi-vim'
-"Plugin 'SirVer/ultisnips'
-"Plugin 'honza/vim-snippets'
+Plugin 'fisadev/vim-isort'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 Plugin 'voithos/vim-python-matchit'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'HerringtonDarkholme/yats.vim'
@@ -29,7 +30,21 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'jistr/vim-nerdtree-tabs'
 
+Plugin 'google/vim-maktaba'
+Plugin 'google/vim-codefmt'
+Plugin 'google/vim-glaive'
+
+Plugin 'Quramy/tsuquyomi'
+Plugin 'prettier/vim-prettier'
+Plugin 'ruanyl/vim-sort-imports'
+
 call vundle#end()
+
+" the glaive#Install() should go after the "call vundle#end()"
+call glaive#Install()
+
+" Enable codefmt's default mappings on the <Leader>= prefix.
+Glaive codefmt plugin[mappings]
 
 filetype plugin indent on
 

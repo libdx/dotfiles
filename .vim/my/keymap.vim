@@ -29,15 +29,20 @@ let mapleader = ","
 :nnoremap <C-k> <C-w>k
 :nnoremap <C-l> <C-w>l
 
-" Tabs and navigation
+" Tabs, buffers and navigation
 :nnoremap <leader>t :tabnew<CR>
 :nnoremap <leader>Q :tabclose<CR>
 :nnoremap <leader>[ :tabprev<CR>
 :nnoremap <leader>] :tabnext<CR>
+:nnoremap <leader>{ :bp<CR>
+:nnoremap <leader>} :bn<CR>
 
 " NERDTree
 :nnoremap <leader>n :NERDTreeTabsToggle<CR>
 :nnoremap <leader>N :NERDTreeTabsFind<CR>
+
+" Tagbar
+:nnoremap <leader>b :TagbarToggle<CR>
 
 " CtrlP
 :nnoremap <leader>o :CtrlP .<CR>
