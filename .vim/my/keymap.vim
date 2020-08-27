@@ -1,4 +1,4 @@
-let mapleader = ","
+let mapleader = ','
 
 " no highlight
 :map <leader>h :noh<CR>
@@ -47,3 +47,11 @@ let mapleader = ","
 " CtrlP
 :nnoremap <leader>o :CtrlP .<CR>
 
+" Spell check
+:nnoremap <leader>s :set spell!<CR>
+
+" External commands
+"
+"" Translate selected text to Russian
+xnoremap <leader>T <esc>:'<,'>:w !trans :ru<CR>
+xnoremap <leader>C <esc>:'<,'>:w !pbcopy<CR><CR>

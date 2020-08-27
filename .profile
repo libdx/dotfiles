@@ -37,6 +37,8 @@ export MDV_THEME=963.4449
 # JIRA
 #eval "$(jira --completion-script-bash)"
 
+eval "$(pyenv init -)"
+
 # Prompt String
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
@@ -148,8 +150,13 @@ function note {
 PROMPT_COMMAND=promt
 
 # Aliases
-alias l="ls -G"
-alias ls="ls -G"
+# alias l="ls -G"
+# alias ls="ls -G"
+# alias ll="ls -l"
+# alias la="ls -a"
+# alias lla="ls -la"
+alias ls="exa"
+alias l="ls -1 --icons"
 alias ll="ls -l"
 alias la="ls -a"
 alias lla="ls -la"
@@ -166,13 +173,15 @@ alias load=". ~/.profile"
 alias t="trans"
 alias o="open"
 alias png="ping 8.8.8.8"
-alias x="xclip -selection clipboard" # use pbcopy on Mac
+#alias x="xclip -selection clipboard" # use pbcopy on Mac
+alias x="pbcopy" # use pbcopy on Mac
 alias vimrc="vim ~/.vimrc"
 alias myvimrc="vim $HOME/.vimrc.d/main.vim"
 alias ver="echo "\$BASH_VERSION""
 alias p="pwd"
-alias px="pwd | xclip -selection clipboard" # use pbcopy on Mac
-alias ncal="ncal -M"
+#alias px="pwd | xclip -selection clipboard" # use pbcopy on Mac
+alias px="pwd | pbcopy" # use pbcopy on Mac
+#alias ncal="ncal -M" # -M don't work on Mac
 
 ## Git
 alias g="git"
@@ -223,11 +232,13 @@ alias pod.u="pod update"
 # Emoji
 
 shrug() {
-    echo -n "¯\_(ツ)_/¯" | xclip -selection clipboard # use pbcopy on Mac
+    # echo -n "¯\_(ツ)_/¯" | xclip -selection clipboard # use pbcopy on Mac
+    echo -n "¯\_(ツ)_/¯" | pbcopy
 }
 
 cherry() {
-    echo -n "🍒" | xclip -selection clipboard # use pbcopy on Mac
+    # echo -n "🍒" | xclip -selection clipboard # use pbcopy on Mac
+    echo -n "🍒" | pbcopy
 }
 
 # Utiles
@@ -262,3 +273,6 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Disable Software Flow Control (XON/XOFF flow control)
 stty -ixon
+
+# Heroku
+heroku autocomplete:script bash

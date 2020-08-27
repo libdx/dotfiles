@@ -1,8 +1,11 @@
 set t_Co=256
 set background=dark
 " colorscheme solarized
-colorscheme flattened_dark
-" colorscheme gruvbox
+" colorscheme flattened_dark
+colorscheme gruvbox
+
+" let g:afterglow_inherit_background=1
+" colorscheme afterglow
 
 " TODO add italic terminal info for iTerm2
 " Support for Italic

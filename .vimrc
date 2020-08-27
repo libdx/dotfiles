@@ -14,10 +14,9 @@ source ~/.vim/my/closetag.vim
 source ~/.vim/my/js-plugin.vim
 source ~/.vim/my/jsx-plugin.vim
 source ~/.vim/my/simple-fold.vim
+source ~/.vim/my/sort-imports.vim
 source ~/.vim/my/coc.vim
 
-"tmp vim-sort-imports: sort on write
-"let g:import_sort_auto = 1
 
 if has('gui_running')
     source ~/.vim/my/gui.vim

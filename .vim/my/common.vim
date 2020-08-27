@@ -5,7 +5,7 @@ set mouse=a " enable mouse support for all modes
 set nobackup
 set nocompatible    " use vim defaults
 set backspace=indent,eol,start " makes backspace work as in most text editors
-set ls=2            " allways show status line
+set ls=2            " always show status line
 set tabstop=4       " numbers of spaces of tab character
 set shiftwidth=4    " numbers of spaces to (auto)indent
 set scrolloff=3     " keep 3 lines when scrolling
@@ -28,9 +28,9 @@ set smartindent     " smart indent
 set expandtab       " tabs are converted to spaces, use only when required
 set iskeyword+=-    " treat identifiers with dash as single word (i.e. search-tag)
 
-set spell
 set spell spelllang=en_us,pl,ru,uk
 set spellfile=~/.vim/spell/en.utf-8.add
+set nospell
 
 " `»` for tabs and `°` for trailing whitespaces.
 set list listchars=tab:»\ ,trail:°
