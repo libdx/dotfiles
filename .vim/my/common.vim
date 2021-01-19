@@ -17,6 +17,7 @@ set visualbell t_vb=    " turn off error beep/flash
 set novisualbell    " turn off visual bell
 set nobackup        " do not keep a backup file
 set number          " show line numbers
+set relativenumber  " show relative numbers
 set title           " show title in console title bar
 set ttyfast         " smoother changes
 set modeline        " last lines in document sets vim mode
@@ -51,3 +52,10 @@ set list listchars=tab:»\ ,trail:°
 "setlocal foldmethod=syntax  " sets fold method based on syntax
 set foldmethod=indent
 set foldlevel=99           " unfold methods by default when open file
+
+" Automatic toggling between absolute and relative line number modes
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END

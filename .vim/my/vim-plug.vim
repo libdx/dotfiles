@@ -7,7 +7,7 @@ Plug 'majutsushi/tagbar'
 Plug 'liuchengxu/vista.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 " Syntax
 Plug 'sheerun/vim-polyglot'
@@ -18,7 +18,11 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tomtom/tcomment_vim'
 Plug 'mileszs/ack.vim'
+Plug 'yegappan/grep'
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
+Plug 'dmerejkowsky/vim-ale'
+" Plug 'ycm-core/YouCompleteMe'
 " Plug 'vim-syntastic/syntastic'
 
 " Python
@@ -27,7 +31,7 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'fisadev/vim-isort'
 " Plug 'nvie/vim-flake8'
-" Plug 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -55,7 +59,7 @@ Plug 'ruanyl/vim-sort-imports'
 " Plug 'prettier/vim-prettier'
 
 " All in One
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Tests
 Plug 'vim-test/vim-test'

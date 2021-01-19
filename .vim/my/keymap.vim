@@ -1,4 +1,5 @@
 let mapleader = ','
+:nmap <Space> <leader>
 
 " no highlight
 :map <leader>h :noh<CR>
