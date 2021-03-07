@@ -4,7 +4,6 @@ export PATH=$PATH:/Users/oleksandr_ignatenko/flutter/bin
 export PATH=$PATH:/usr/local/bin/
 export PATH=$PATH:/usr/local/sbin/
 export PATH=$PATH:/Users/oleksandr_ignatenko/google-cloud-sdk/bin
-export PATH=$(pyenv root)/shims:/usr/local/bin:/usr/bin:/bin:$PATH
 export PATH=$PATH:/Users/oleksandr_ignatenko/Library/Android/sdk/tools
 export PATH=$HOME/.my/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
@@ -14,6 +13,12 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 force_color_prompt=yes
+
+# Homebrew
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
+# pyenv
+export PATH=$(pyenv root)/shims:/usr/local/bin:/usr/bin:/bin:$PATH
 
 # Terminal Markdown Viewer (mdv)
 ## Good values:
@@ -45,7 +50,7 @@ function parse_git_branch {
 }
 
 function parse_git_dirty {
-  git diff --quiet || echo " 𐄂"
+  git diff --quiet || echo " 🔥"
 }
 
 function limit_string {
@@ -147,14 +152,15 @@ function note {
 
 # Ѧ Ѩ 
 
-PROMPT_COMMAND=promt
+# PROMPT_COMMAND=promt
+eval "$(starship init bash)"
 
 # Aliases
-# alias l="ls -G"
-# alias ls="ls -G"
-# alias ll="ls -l"
-# alias la="ls -a"
-# alias lla="ls -la"
+#alias l="ls --color"
+#alias ls="ls --color"
+#alias ll="ls -l"
+#alias la="ls -a"
+#alias lla="ls -la"
 alias ls="exa"
 alias l="ls -1 --icons"
 alias ll="ls -l"
@@ -169,7 +175,7 @@ alias https='http --default-scheme=https'
 alias w0="curl wttr.in/?0"
 alias wn="curl wttr.in/?n"
 alias ww="curl wttr.in"
-alias load=". ~/.profile"
+alias load=". ~/.profile.my"
 alias t="trans"
 alias o="open"
 alias png="ping 8.8.8.8"
@@ -218,6 +224,7 @@ alias y="yarn"
 alias py="python"
 alias pe="pipenv"
 alias pe.r="pipenv run"
+alias pyck="which python && which pip && python --version"
 
 ## Docker
 alias dk="docker"
@@ -256,7 +263,8 @@ alias tomixed="perl -pe 's/_([a-z])/uc(\$1)/ge'"
 
 # Z - jump around (smart cd)
 #. /usr/local/etc/profile.d/z.sh
-. $HOME/.linuxbrew/etc/profile.d/z.sh
+#. $HOME/.linuxbrew/etc/profile.d/z.sh
+. /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh
 
 # chruby
 #source /opt/boxen/homebrew/opt/chruby/share/chruby/chruby.sh
@@ -275,4 +283,4 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 stty -ixon
 
 # Heroku
-heroku autocomplete:script bash
+# heroku autocomplete:script bash
