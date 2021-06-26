@@ -13,6 +13,13 @@ export PATH=$HOME/.local/bin:$PATH
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# SSH
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/github
+
+# WSL
+alias start="explorer.exe"
+
 force_color_prompt=yes
 
 # Terminal Markdown Viewer (mdv)
@@ -45,8 +52,11 @@ function parse_git_branch {
 }
 
 function parse_git_dirty {
-  git diff --quiet || echo " 𐄂"
+  git diff --quiet || echo "🔥"
 }
+
+# 🔥
+# ❌
 
 function limit_string {
   local str=$1
@@ -76,7 +86,8 @@ function promt {
   local  OFF="\[\033[m\]"
   #PS1="${BOLD}[\W${LIGHT_RED}$(parse_git)${OFF}${BOLD}]\$${OFF} "
   #PS1="${BOLD}\W${LIGHT_RED}$(parse_git)${OFF}${BOLD} ➜${OFF} "
-  PS1="${BOLD}\W${LIGHT_RED}$(parse_git)${OFF}${BOLD} ->${OFF} "
+  # PS1="${BOLD}\W${LIGHT_RED}$(parse_git)${OFF}${BOLD} ->${OFF} "
+  PS1="${BOLD}\W${LIGHT_RED}$(parse_git)${OFF}${BOLD} ❯${OFF} "
   PS2="${BOLD}>>${OFF} "
 }
 
@@ -256,7 +267,8 @@ alias tomixed="perl -pe 's/_([a-z])/uc(\$1)/ge'"
 
 # Z - jump around (smart cd)
 #. /usr/local/etc/profile.d/z.sh
-. $HOME/.linuxbrew/etc/profile.d/z.sh
+# . $HOME/.linuxbrew/etc/profile.d/z.sh
+. /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh
 
 # chruby
 #source /opt/boxen/homebrew/opt/chruby/share/chruby/chruby.sh
@@ -275,4 +287,4 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 stty -ixon
 
 # Heroku
-heroku autocomplete:script bash
+# heroku autocomplete:script bash

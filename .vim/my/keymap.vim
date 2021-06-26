@@ -1,5 +1,8 @@
 let mapleader = ','
 
+" visual mode remap (for windows terminal)
+nnoremap <C-M-v> <C-v>
+
 " no highlight
 :map <leader>h :noh<CR>
 " break string with new line
