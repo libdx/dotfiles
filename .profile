@@ -1,8 +1,8 @@
 # PATH
 export PATH=$PATH:/Applications/MacVim.app/Contents/bin
 export PATH=$PATH:/Users/oleksandr_ignatenko/flutter/bin
-export PATH=$PATH:/usr/local/bin/
-export PATH=$PATH:/usr/local/sbin/
+export PATH=/usr/local/bin/:$PATH
+export PATH=/usr/local/sbin/:$PATH
 export PATH=$PATH:/Users/oleksandr_ignatenko/google-cloud-sdk/bin
 export PATH=$PATH:/Users/oleksandr_ignatenko/Library/Android/sdk/tools
 export PATH=$HOME/.my/bin:$PATH
@@ -15,7 +15,7 @@ export LANG=en_US.UTF-8
 force_color_prompt=yes
 
 # Homebrew
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+# eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 # pyenv
 export PATH=$(pyenv root)/shims:/usr/local/bin:/usr/bin:/bin:$PATH
@@ -264,7 +264,8 @@ alias tomixed="perl -pe 's/_([a-z])/uc(\$1)/ge'"
 # Z - jump around (smart cd)
 #. /usr/local/etc/profile.d/z.sh
 #. $HOME/.linuxbrew/etc/profile.d/z.sh
-. /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh
+#. /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh
+. /usr/local/etc/profile.d/z.sh
 
 # chruby
 #source /opt/boxen/homebrew/opt/chruby/share/chruby/chruby.sh
