@@ -32,6 +32,8 @@
     pushup = !git push --set-upstream origin $(git current)
     subup = submodule update
     new = !bash -c 'source ~/.profile.local && cap_create_git_branch $0 $@'
+
+    stash-search = "!f() { git show $(git stash list | cut -d\":\" -f 1) | grep \"$@\" ; }; f"
 [core]
 	editor = vim
 	pager = diff-so-fancy | less --tabs=4 -RFX
@@ -52,3 +54,5 @@
     newHighlight = green 22
 [hub]
 	protocol = https
+[pull]
+	rebase = true
