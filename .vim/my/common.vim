@@ -28,6 +28,7 @@ set autoindent      " always set autoindenting on
 set smartindent     " smart indent
 set expandtab       " tabs are converted to spaces, use only when required
 set iskeyword+=-    " treat identifiers with dash as single word (i.e. search-tag)
+set dir=~/.vim-swap " sets directory for swap files
 
 set spell spelllang=en_us,pl,ru,uk
 set spellfile=~/.vim/spell/en.utf-8.add
@@ -35,6 +36,9 @@ set nospell
 
 " `»` for tabs and `°` for trailing whitespaces.
 set list listchars=tab:»\ ,trail:°
+
+" make use of system copy-paste clipboard
+set clipboard+=unnamed
 
 "set ignorecase                 " ignore case when searching
 "set noignorecase               " don't ignore case

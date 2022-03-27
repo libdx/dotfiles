@@ -20,9 +20,9 @@ let mapleader = ','
 :map [/ :s!^// !! <bar> :noh<CR>
 
 " Putting words under quotes
-:nnoremap <leader>q` ciw``<ESC>P
-:nnoremap <Leader>q" ciw""<ESC>P
-:nnoremap <Leader>q' ciw''<ESC>P
+:nnoremap <leader>zq` ciw``<ESC>P
+:nnoremap <Leader>zq" ciw""<ESC>P
+:nnoremap <Leader>zq' ciw''<ESC>P
 
 " Convenient jumps between splits
 :nnoremap <C-h> <C-w>h
@@ -49,7 +49,7 @@ let mapleader = ','
 :nnoremap <leader>o :CtrlP .<CR>
 
 " Spell check
-:nnoremap <leader>s :set spell!<CR>
+:nnoremap <leader>zs :set spell!<CR>
 
 " External commands
 "

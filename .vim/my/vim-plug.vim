@@ -21,13 +21,13 @@ Plug 'mileszs/ack.vim'
 Plug 'yegappan/grep'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
-Plug 'dmerejkowsky/vim-ale'
+Plug 'dmerejkowsky/vim-ale' "tmp disable
 " Plug 'ycm-core/YouCompleteMe'
 " Plug 'vim-syntastic/syntastic'
 
 " Python
 Plug 'voithos/vim-python-matchit'
-Plug 'tmhedberg/SimpylFold'
+" Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'fisadev/vim-isort'
 " Plug 'nvie/vim-flake8'
