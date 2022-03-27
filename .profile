@@ -20,6 +20,9 @@ force_color_prompt=yes
 # pyenv
 export PATH=$(pyenv root)/shims:/usr/local/bin:/usr/bin:/bin:$PATH
 
+# Workaround for iPython DEBUG bug
+# export PYTHONSTARTUP="$HOME/pythonstartup.py"
+
 # Terminal Markdown Viewer (mdv)
 ## Good values:
 ## 777.4644
@@ -31,7 +34,7 @@ export PATH=$(pyenv root)/shims:/usr/local/bin:/usr/bin:/bin:$PATH
 export MDV_THEME=963.4449
 
 # Android
-#export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/"
+# export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/"
 
 # Java
 #export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home/"
@@ -42,7 +45,15 @@ export MDV_THEME=963.4449
 # JIRA
 #eval "$(jira --completion-script-bash)"
 
+# Bash Completion
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
 eval "$(pyenv init -)"
+
+# Node
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 
 # Prompt String
 function parse_git_branch {
@@ -175,7 +186,7 @@ alias https='http --default-scheme=https'
 alias w0="curl wttr.in/?0"
 alias wn="curl wttr.in/?n"
 alias ww="curl wttr.in"
-alias load=". ~/.profile.my"
+alias load=". ~/.profile"
 alias t="trans"
 alias o="open"
 alias png="ping 8.8.8.8"
@@ -258,8 +269,8 @@ alias tomixed="perl -pe 's/_([a-z])/uc(\$1)/ge'"
 ## Local profile
 #source ~/.profile.local
 
-# Completions
-#source ~/git-completion.bash
+# Git Completions
+. ~/git-completion.bash
 
 # Z - jump around (smart cd)
 #. /usr/local/etc/profile.d/z.sh
@@ -285,3 +296,10 @@ stty -ixon
 
 # Heroku
 # heroku autocomplete:script bash
+
+# SDK Man
+# export SDKMAN_DIR="/Users/alex/.sdkman"
+# [[ -s "/Users/alex/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/alex/.sdkman/bin/sdkman-init.sh"
+
+# SSH
+eval "$(ssh-agent -s)"
