@@ -9,6 +9,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'ludovicchabant/vim-gutentags'
 
 " Syntax
 Plug 'sheerun/vim-polyglot'
