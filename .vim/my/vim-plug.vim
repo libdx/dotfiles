@@ -7,7 +7,8 @@ Plug 'majutsushi/tagbar'
 Plug 'liuchengxu/vista.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
-" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " Syntax
 Plug 'sheerun/vim-polyglot'
@@ -21,6 +22,7 @@ Plug 'mileszs/ack.vim'
 Plug 'yegappan/grep'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'dmerejkowsky/vim-ale'
 
 " Python

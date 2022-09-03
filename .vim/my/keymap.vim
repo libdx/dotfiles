@@ -42,8 +42,9 @@ let mapleader = ','
 " Tagbar
 :nnoremap <leader>b :TagbarToggle<CR>
 
-" CtrlP
-:nnoremap <leader>o :CtrlP .<CR>
+" fzf
+:nnoremap <leader>o :Files<CR>
+
 
 " Spell check
 :nnoremap <leader>ss :set spell!<CR>:hi SpellBad cterm=underline<CR>
