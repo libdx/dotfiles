@@ -7,17 +7,7 @@ let mapleader = ','
 :nnoremap <leader><CR> i<CR><ESC>
 " quick write
 :nnoremap <leader>w :noh<CR>:w<CR>
-
-" Comment and uncomment lines
-:map <leader># :s!^!# ! <bar> :noh<CR>
-:map <leader>/ :s!^!// ! <bar> :noh<CR>
-:map <leader>" :s!^!" ! <bar> :noh<CR>
-
-:map ]# :s!^!# ! <bar> :noh<CR>
-:map ]/ :s!^!// ! <bar> :noh<CR>
-
-:map [# :s!^# !! <bar> :noh<CR>
-:map [/ :s!^// !! <bar> :noh<CR>
+:nnoremap s :noh<CR>:w<CR>
 
 " Putting words under quotes
 :nnoremap <leader>zq` ciw``<ESC>P
@@ -38,9 +28,16 @@ let mapleader = ','
 :nnoremap <leader>{ :bp<CR>
 :nnoremap <leader>} :bn<CR>
 
+:nnoremap <Tab> :tabnext<CR>
+:nnoremap <S-Tab> :tabprev<CR>
+:nnoremap <C-[> :tabprev<CR>
+:nnoremap <C-]> :tabnext<CR>
+:nnoremap <C-}> :tabmove +1<CR>
+:nnoremap <C-{> :tabmove -1<CR>
+
 " NERDTree
-:nnoremap <leader>n :NERDTreeTabsToggle<CR>
-:nnoremap <leader>N :NERDTreeTabsFind<CR>
+:nnoremap <leader>n :NERDTreeToggle<CR>
+:nnoremap <leader>N :NERDTreeFind<CR>
 
 " Tagbar
 :nnoremap <leader>b :TagbarToggle<CR>
@@ -49,11 +46,9 @@ let mapleader = ','
 :nnoremap <leader>o :CtrlP .<CR>
 
 " Spell check
-:nnoremap <leader>zs :set spell!<CR>
-:nnoremap <leader>zu :hi SpellBad cterm=underline<CR>
+:nnoremap <leader>ss :set spell!<CR>:hi SpellBad cterm=underline<CR>
 
 " External commands
 "
 "" Translate selected text to Russian
 xnoremap <leader>T <esc>:'<,'>:w !trans :ru<CR>
-xnoremap <leader>C <esc>:'<,'>:w !pbcopy<CR><CR>
