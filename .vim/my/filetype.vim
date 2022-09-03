@@ -19,8 +19,6 @@ augroup autoformat_settings
     " autocmd FileType python AutoFormatBuffer black
 augroup END
 
-autocmd FileType typescript nmap <buffer> <Leader>jt : <C-u>echo tsuquyomi#hint()<CR>
-autocmd FileType typescriptreact nmap <buffer> <Leader>jt : <C-u>echo tsuquyomi#hint()<CR>
+" autocmd FileType typescript nmap <buffer> <Leader>jt : <C-u>echo tsuquyomi#hint()<CR>
+" autocmd FileType typescriptreact nmap <buffer> <Leader>jt : <C-u>echo tsuquyomi#hint()<CR>
 
-au BufRead,BufNewFile *.py nmap <C-\> oimport ipdb; ipdb.set_trace()<ESC>
-au BufRead,BufNewFile *.py imap <C-\> import ipdb; ipdb.set_trace()

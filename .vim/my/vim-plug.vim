@@ -21,16 +21,12 @@ Plug 'mileszs/ack.vim'
 Plug 'yegappan/grep'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
-Plug 'dmerejkowsky/vim-ale' "tmp disable
-" Plug 'ycm-core/YouCompleteMe'
-" Plug 'vim-syntastic/syntastic'
+Plug 'dmerejkowsky/vim-ale'
 
 " Python
 Plug 'voithos/vim-python-matchit'
-" Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'fisadev/vim-isort'
-" Plug 'nvie/vim-flake8'
 Plug 'davidhalter/jedi-vim'
 
 Plug 'vim-airline/vim-airline'
@@ -46,11 +42,6 @@ Plug 'danilo-augusto/vim-afterglow'
 " Appearance
 Plug 'ryanoasis/vim-devicons'
 Plug 'nathanaelkane/vim-indent-guides'
-
-" Format
-" Plug 'google/vim-maktaba'
-" Plug 'google/vim-codefmt'
-" Plug 'google/vim-glaive'
 
 " JavaScript and TypeScript
 Plug 'HerringtonDarkholme/yats.vim'
