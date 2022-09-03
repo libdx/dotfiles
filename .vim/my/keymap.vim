@@ -50,6 +50,7 @@ let mapleader = ','
 
 " Spell check
 :nnoremap <leader>zs :set spell!<CR>
+:nnoremap <leader>zu :hi SpellBad cterm=underline<CR>
 
 " External commands
 "
