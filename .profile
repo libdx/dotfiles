@@ -231,6 +231,7 @@ alias mro="lab mr browse"
 
 ## JavaScript
 alias y="yarn"
+alias jtags="ctags -R src config && sed -i ‘’ -E '/^(if|switch|function|module\.exports|it|describe).+language:js$/d' tags"
 
 ## Python
 alias py="python"
