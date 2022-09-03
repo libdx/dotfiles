@@ -1,3 +1,6 @@
+source ~/.vim/my/jedi.vim
+source ~/.vim/my/simple-fold.vim
+
 let g:ale_linters = {
 \   'python': ['pylint', 'flake8', 'mypy'],
 \}

@@ -4,7 +4,6 @@ source ~/.vim/my/theme.vim
 source ~/.vim/my/keymap.vim
 source ~/.vim/my/filetype.vim
 source ~/.vim/my/airline.vim
-source ~/.vim/my/jedi.vim
 source ~/.vim/my/youcompleteme.vim
 source ~/.vim/my/ale.vim
 source ~/.vim/my/nerdtree.vim
@@ -12,11 +11,6 @@ source ~/.vim/my/indent-guides.vim
 source ~/.vim/my/ultisnips.vim
 source ~/.vim/my/ctrlp.vim
 source ~/.vim/my/closetag.vim
-source ~/.vim/my/js-plugin.vim
-source ~/.vim/my/jsx-plugin.vim
-source ~/.vim/my/simple-fold.vim
-source ~/.vim/my/sort-imports.vim
-" source ~/.vim/my/coc.vim
 
 
 if has('gui_running')
