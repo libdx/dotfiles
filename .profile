@@ -7,6 +7,7 @@ export PATH=$PATH:/Users/oleksandr_ignatenko/google-cloud-sdk/bin
 export PATH=$PATH:/Users/oleksandr_ignatenko/Library/Android/sdk/tools
 export PATH=$HOME/.my/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
+export PATH=$PATH:$HOME/flutter/bin
 
 # Lang
 export LC_ALL=en_US.UTF-8
@@ -220,7 +221,7 @@ alias subup="git submodule update"
 alias sel="git st -s | awk '{ print \$2 }' | fzf -m"
 
 ## Mercurial
-alias gh="hg"
+# alias gh="hg"
 alias h="hg"
 
 ## GitLab
